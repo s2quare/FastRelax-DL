@@ -1,0 +1,10 @@
+# wandb
+notes: Use MIRACLE GSS, in silico estimation, snr inf, uniform distribution
+# data specifiers
+model: miracle # sv, mb or miracle
+# sequence parameter
+t1_est: 1000
+tr: 4.8
+te: 2.4
+tr_str: 4p8
+fa_nom: 15

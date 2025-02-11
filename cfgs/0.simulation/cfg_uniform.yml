@@ -1,0 +1,26 @@
+tr: 4.8 # Repetition time (ms)
+te: 2.4 # Echo time (ms)
+tr_str: 4p8 # Repetition time (str)
+fa_nom: 15 # Nominal flip angle (degrees)
+M0: 1 # Equilibrium magnetization
+npc: 12 # Number of phase-cycling steps
+Np: 1 # Highest order configuration
+param_min: # T1, T2, B0, B1
+  - 360 # Minimum T1 (ms)
+  - 20 # Minimum T2 (ms)
+  - -0.9 # Minimum B0 (scaling factor with Pi). In the simulation script, set the --b0 argument to True, otherwise B0 will be set to 0.
+  - 0.7  # Minimum B1 (scaling factor with nominal flip angle)
+param_max: # T1, T2, B0, B1
+  - 2080 # Maximum T1 (ms)
+  - 120 # Maximum T2 (ms)
+  - 0.9 # Maximum B0 (scaling factor with Pi). In the simulation script, set the --b0 argument to True, otherwise B0 will be set to 0.
+  - 1.3 # Maximum B1 (scaling factor with nominal flip angle)
+distr: uniform  # in_vivo, uniform, uniform_ext 
+mb: false # Use model-based (physics-informed) DNN or not
+nneurons: # Model architecture
+  - 4 # Number of input neurons
+  - 64 # Number of hidden neurons
+  - 64 # Number of hidden neurons
+  - 2 # Number of output neurons
+nsamples: 400000 # Number of samples
+device: cpu # Device to use (cpu)

@@ -1,0 +1,59 @@
+# wandb
+project: fastrelax
+entity: dl-ssfp
+notes: In silico training of Supervised or Physics-informed Neural Networks for QbSSFP
+# data specifiers
+model: 
+  - sv # supervised
+  - mb  # model-based/physics-informed
+snr: 
+  - inf
+  - 50
+  - 25
+  - 10
+sig_sim_mag: 0.074 # signal magnitude for noise determination
+distr: # in_vivo_brain, uniform, uniform_ext
+  - uniform
+  - uniform_ext
+  - in_vivo  
+# sequence parameter
+tr: 4.8 # Repetition time (ms)
+te: 2.4 # Echo time (ms)
+tr_str: 4p8 # Repetition time (str)
+fa_nom: 15 # Nominal flip angle (degrees)
+M0: 1 # Equilibrium magnetization
+npc:  # Number of phase-cycles
+  - 12
+  - 6
+  - 4
+Np: 1 # Highest order configuration
+param_min: # T1, T2
+  - 360 # Minimum T1 (ms)
+  - 20 # Minimum T2 (ms)
+  - -0.9 # Minimum B0 (scaling factor with Pi). In the simulation script, set the --b0 argument to True, otherwise B0 will be set to 0.
+param_max:
+  - 2080 # Maximum T1 (ms)
+  - 120 # Maximum T2 (ms)
+  - 0.9 # Maximum B0 (scaling factor with Pi). In the simulation script, set the --b0 argument to True, otherwise B0 will be set to 0.
+param_max_ext: # for uniform extended distribution
+  - 5000  # Maximum T1 (ms)
+  - 2500 # Maximum T2 (ms)
+  - 0.9  # Maximum B0 (scaling factor with Pi). In the simulation script, set the --b0 argument to True, otherwise B0 will be set to 0.
+# model architecture
+nneurons: # Model architecture, nneurons per hidden layer will be chagned if model is magnitude-based
+  - 6
+  - 256
+  - 256
+  - 3
+# training parameter
+mbatch: 128 # mini-batch size
+nepochs: 3 # number of epochs
+lr: 0.0002 # learning rate
+weight_decay: 0.00001 # weight decay
+patience: 25 # patience for early stopping
+nsamples: 400000 # Number of samples
+split: # train, val, test split
+  - 0.6
+  - 0.2
+  - 0.2
+device: cpu # Device to use (cpu)

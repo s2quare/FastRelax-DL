@@ -1,0 +1,8 @@
+# ignore wandb folder
+wandb/*
+
+# ignore data folder and subfolders
+data/**
+
+# Don't include cache files
+scripts/*.pyc
