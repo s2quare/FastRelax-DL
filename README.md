@@ -1,7 +1,7 @@
 # FastRelax-DL
 This is the repository for our publication **Flexible and Cost-Effective Deep Learning for Accelerated Multi-Parametric Relaxometry using Phase-Cycled bSSFP**. Our main goal is to provide a simple and effective framework to train lightweight deep neural networks (DNNs) for fast multi-parametric mapping. 
 - **Interested to optimize for a broader or more confined parameter range?** Simulate your parameter range or distribution of choice, train the DNNs (a few second per epoch) and use the DNNs for multi-parametric relaxometry mapping. 
-- **Acquiring data at other field strenghts?** Adjust the simulation to your needs of sequence parameters: TR, TE, nominal flip angle, or number of phase cycles.
+- **Acquiring data at other field strenghts or playing around with the sequence?** Adjust the simulation to your needs of sequence parameters: TR, TE, nominal flip angle, or number of phase cycles.
 - Play around with supervised and physics-informed (model-based) DNNs, DNN training parameters, and see the effects of complex-based vs. magnitude-based DNNs.
 
 ![Figure1](figures/fig1.png)
